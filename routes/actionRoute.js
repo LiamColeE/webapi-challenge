@@ -9,7 +9,7 @@ router.get('/actions/:id', verifyActionID, (req, res) => {
 });
 
 router.post('/actions', verifyHeader, (req, res) => {
-    action = {
+    let action = {
         project_id: req.headers.project_id,
         description: req.headers.description,
         notes: req.headers.notes
@@ -26,7 +26,7 @@ router.post('/actions', verifyHeader, (req, res) => {
 })
 
 router.put('/actions/:id', verifyHeader, verifyActionID, (req, res) => {
-    action = {
+    let action = {
         project_id: req.headers.project_id,
         description: req.headers.description,
         notes: req.headers.notes,
