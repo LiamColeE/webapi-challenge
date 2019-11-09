@@ -5,8 +5,4 @@ server.use(projectRoute);
 const actionRoute = require("./routes/actionRoute");
 server.use(actionRoute);
 
-
-
-
-
 module.exports = server;

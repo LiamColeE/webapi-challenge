@@ -8,6 +8,18 @@ router.get('/projects/:id', verifyID, (req, res) => {
     res.status(200)
 });
 
+router.get('/projects/:id/actions', verifyID, (req,res) => {
+    db.getProjectActions(req.params.id)
+    .then((actions) => {
+        res.send(actions)
+        res.status(200)
+    })
+    .catch((err) => {
+        res.send("internal server err")
+        res.status(500)
+    })
+})
+
 router.post('/projects', verifyHeader, (req, res) => {
     let project = {
         name: req.headers.name,
